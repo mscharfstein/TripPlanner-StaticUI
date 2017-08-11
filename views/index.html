@@ -2,4 +2,24 @@
 
 {% block content %}
 <h1>Welcome to tripplanner!</h1>
+
+<div> Hotels:
+<select id="select hotels">
+    {% for hotel in hotels%}
+        <option value = {{hotel.name}}> {{hotel.name}} </option>
+    {% endfor %}
+</select>
+
+Restaurants: <select id="select restaurant">
+    {% for restaurant in restaurants%}
+        <option value = {{restaurant.name}}> {{restaurant.name}} </option>
+    {% endfor %}
+</select>
+
+Activity: <select id="select activity">
+    {% for activity in activities%}
+        <option value = {{activity.name}}> {{activity.name}} </option>
+    {% endfor %}
+</select>
+</div>
 {% endblock %}
