@@ -1,3 +1,5 @@
 body {
-	background: indianRed;
+	background-image: url('JohnPic.jpg');
+	background-repeat: repeat;
+	/* background: indianRed; */
 }

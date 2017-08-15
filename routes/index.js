@@ -3,8 +3,11 @@ const Hotel = require('../models/hotel');
 const Place = require('../models/place');
 const Activity = require('../models/activity')
 const Restaurant = require('../models/restaurant');
+//const initialize_gmaps = require('../public/map.js');
 
 router.get('/', function(req, res, next){
+
+  //initialize_gmaps();
   var allHotels = Hotel.findAll({});
   var allActivities = Activity.findAll({});
   var allRestaurants = Restaurant.findAll({});
@@ -13,9 +16,9 @@ router.get('/', function(req, res, next){
       hotelsToRender = allThings[0];
       activitiesToRender = allThings[1];
       restaurantsToRender = allThings[2];
-      res.render('index', {hotels:hotelsToRender, activities: activitiesToRender, restaurants: restaurantsToRender }) 
+      res.render('index', {hotels:hotelsToRender, activities: activitiesToRender, restaurants: restaurantsToRender })
     })
-	
+
 });
 
 
@@ -30,7 +33,7 @@ router.use(function(req, res, next) {
 router.use(function(err, req, res, next) {
   res.status(err.status || 500);
   console.error(err);
-  res.render(
+  res.send(err,
     "Error! Help!"
   );
 });
